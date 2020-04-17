@@ -41,7 +41,7 @@ const protect = (url, validator, { directory = process.cwd(), realm = 'default-r
     // Serve the requested file
     serve(req, res, () => {
       res.statusCode = 404;
-      res.end('404 Not Found');
+      res.end('static-auth: 404 Not Found');
     });
   };
 };
