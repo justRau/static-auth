@@ -125,7 +125,7 @@ send@0.17.1:
 
 "serve-static@https://github.com/justRau/serve-static":
   version "1.14.1"
-  resolved "https://github.com/justRau/serve-static#80a97c1641779b073fce16580a04086d873ae0e2"
+  resolved "https://github.com/justRau/serve-static#3aaa753ca9022cc878d33583e6d12ef9a7708b99"
   dependencies:
     encodeurl "~1.0.2"
     escape-html "~1.0.3"
