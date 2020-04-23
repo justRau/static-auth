@@ -18,7 +18,7 @@ const protect = (url, validator, { directory = process.cwd(), realm = 'default-r
 
   return (req, res) => {
     // If request URL starts with the URL the user wants to restrict access to
-    if (req.url.startsWith(url) && authenticationEnabled)
+    if (req.url.startsWith(url) && authenticationEnabled) {
       const credentials = getCredentials(req);
 
       // If no credentials provided or they're not valid
