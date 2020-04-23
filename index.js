@@ -5,7 +5,7 @@ const serveStatic = require('serve-static');
  *
  */
 
-const protect = (url, validator, { directory = process.cwd(), realm = 'default-realm', onAuthFailed = null } = {}) => {
+const protect = (url, validator, { directory = process.cwd(), realm = 'default-realm', onAuthFailed = null, bypassAuthentication = false } = {}) => {
   // checks >>
   if (typeof url !== 'string')
     throw new Error('`url` is not a string');
@@ -18,7 +18,7 @@ const protect = (url, validator, { directory = process.cwd(), realm = 'default-r
 
   return (req, res) => {
     // If request URL starts with the URL the user wants to restrict access to
-    if (req.url.startsWith(url)) {
+    if (req.url.startsWith(url) && !bypassAuthentication) {
       const credentials = getCredentials(req);
 
       // If no credentials provided or they're not valid
